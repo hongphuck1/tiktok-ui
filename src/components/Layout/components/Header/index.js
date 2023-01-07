@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import classnames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCircleXmark, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classnames.bind(styles);
 
 const Header = () => {
-    const [searchResult, setSearchResult] = useState([2]);
+    const [searchResult, setSearchResult] = useState([]);
 
     return (
         <div className={cx('wrapper')}>
@@ -46,7 +47,7 @@ const Header = () => {
                     <button className={cx('clear-btn')}>
                         <FontAwesomeIcon className={cx('close-icon')} icon={faCircleXmark} />
                     </button>
-                    <FontAwesomeIcon className={cx('loading-icon')} icon={faSpinner} />
+                    {/* <FontAwesomeIcon className={cx('loading-icon')} icon={faSpinner} /> */}
 
                     <button className={cx('search-btn')}>
                         <FontAwesomeIcon className={cx('search-icon')} icon={faMagnifyingGlass} />
@@ -54,7 +55,10 @@ const Header = () => {
                 </div>
 
                 {/* actions */}
-                <div className={cx('actions')}>content</div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </div>
     );
