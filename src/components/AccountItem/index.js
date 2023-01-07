@@ -4,7 +4,6 @@ import styles from './AccountItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import images from '~/assets/images';
-
 const cx = classNames.bind(styles);
 
 // api ảo
@@ -29,11 +28,7 @@ const apiAccount = [
 const AccountItem = () => {
     return (
         <div className={cx('wrapper')}>
-            <img
-                className={cx('avatar')}
-                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d8893c6d4f2e91afa0432bc3c1415735~c5_100x100.jpeg?x-expires=1673168400&x-signature=JKmEMBUvcnFJfycVduUHopWJNsQ%3D"
-                alt="Phuc"
-            ></img>
+            <img className={cx('avatar')} src={images.avatar1} alt="Phuc"></img>
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
                     <span>Dương Hồng Phúc</span>
