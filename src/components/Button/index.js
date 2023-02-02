@@ -44,7 +44,16 @@ const Button = ({
         Comp = 'a';
     }
 
-    const classes = cx('wrapper', { [className]: className, primary, outline, small, large, text, disabled, rounded });
+    const classes = cx('wrapper', {
+        [className]: className,
+        primary,
+        outline,
+        small,
+        large,
+        text,
+        disabled,
+        rounded,
+    });
 
     return (
         <Comp className={classes} {...props}>

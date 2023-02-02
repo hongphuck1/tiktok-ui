@@ -3,7 +3,8 @@ import styles from './Sidebar.module.scss';
 const cx = classNames.bind(styles);
 
 const Sidebar = () => {
-    return <aside className={cx('wrapper')}>Sidebar</aside>;
+    // sidebar
+    return <aside className={cx('wrapper')}></aside>;
 };
 
 export default Sidebar;
