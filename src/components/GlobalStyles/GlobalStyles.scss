@@ -9,6 +9,7 @@
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
 }
 
 * {
@@ -42,4 +43,10 @@ a[href] {
 
 ul {
     list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+    .App {
+        overflow: hidden;
+    }
 }

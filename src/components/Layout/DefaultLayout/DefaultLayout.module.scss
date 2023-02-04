@@ -7,7 +7,9 @@
 .container {
     width: var(--default-layout-width);
     min-height: 1000px;
+    padding: 0 var(--default-layout-horizontal-spacer);
     display: flex;
+    margin-top: var(--default-layout-header-height);
     // background-color: aquamarine;
 }
 
@@ -15,4 +17,5 @@
     flex: 1;
     // background-color: #888;
     min-height: 1000px;
+    margin-left: 356px;
 }

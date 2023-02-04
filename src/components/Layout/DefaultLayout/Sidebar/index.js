@@ -4,7 +4,7 @@ const cx = classNames.bind(styles);
 
 const Sidebar = () => {
     // sidebar
-    return <aside className={cx('wrapper')}></aside>;
+    return <aside className={cx('wrapper')}>Sidebar</aside>;
 };
 
 export default Sidebar;

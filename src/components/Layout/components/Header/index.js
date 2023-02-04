@@ -22,6 +22,52 @@ import DarkMode from '~/components/Darkmode';
 
 const cx = classnames.bind(styles);
 
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    color: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    color: 'taybannha',
+                    title: 'Español',
+                },
+                {
+                    // type: 'language',
+                    color: 'trungquoc',
+                    title: '中文(台灣)',
+                },
+            ],
+        },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Chế độ tối',
+        darkMode: <DarkMode />,
+    },
+];
+
 const Header = () => {
     const [searchResult, setSearchResult] = useState([]);
     const refInput = useRef();
@@ -36,26 +82,21 @@ const Header = () => {
         setSearchResult((refInput.current.value = ''));
     };
 
-    const MENU_ITEMS = [
-        {
-            icon: <FontAwesomeIcon icon={faEarthAsia} />,
-            title: 'Tiếng Việt',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-            title: 'Feedback and help',
-            to: '/feedback',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faKeyboard} />,
-            title: 'Keyboard shortcuts',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faMoon} />,
-            title: 'Chế độ tối',
-            darkMode: <DarkMode />,
-        },
-    ];
+    // xử lý logic
+    const handleMenuOnchange = (menuItem) => {
+        console.log(menuItem);
+        switch (menuItem.type) {
+            case 'language':
+                console.log('đây là language');
+                break;
+            case 'icon':
+                console.log('đây là icon');
+                break;
+
+            default:
+                console.error('Chưa có giữ liệu "Case" tương ứng...!');
+        }
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -74,8 +115,9 @@ const Header = () => {
                                 <PopperWrapper>
                                     <h4 className={cx('search-title')}>Tài Khoản</h4>
                                     <AccountItem />
+                                    {/*                                     
                                     <AccountItem />
-                                    <AccountItem />
+                                    <AccountItem /> */}
                                 </PopperWrapper>
                             </div>
                         )}
@@ -106,7 +148,7 @@ const Header = () => {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuOnchange}>
                         <div className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </div>

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const Button = ({
+    // các props
     to,
     href,
     primary = false,
@@ -22,7 +23,8 @@ const Button = ({
     onClick,
     ...AllProps
 }) => {
-    let Comp = 'button';
+    // xử lý dữ liệu
+    let Components = 'button';
     const props = {
         onClick,
         ...AllProps,
@@ -38,12 +40,13 @@ const Button = ({
 
     if (to) {
         props.to = to;
-        Comp = Link;
+        Components = Link;
     } else if (href) {
         props.href = href;
-        Comp = 'a';
+        Components = 'a';
     }
 
+    // class
     const classes = cx('wrapper', {
         [className]: className,
         primary,
@@ -56,11 +59,11 @@ const Button = ({
     });
 
     return (
-        <Comp className={classes} {...props}>
+        <Components className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
-        </Comp>
+        </Components>
     );
 };
 
