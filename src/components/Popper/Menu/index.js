@@ -17,6 +17,7 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
     const renderItems = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
+
             return (
                 <MenuItem
                     key={index}
@@ -24,11 +25,10 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => {
-                                console.log(prev);
                                 return [...prev, item.children];
                             });
                         } else {
-                            onChange(item);
+                            console.log(onChange(item));
                         }
                     }}
                 />
@@ -42,6 +42,7 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
                 interactive
                 visible
                 delay={[0, 1000]}
+                offset={[12, 8]}
                 placement="top-end"
                 render={(attrs) => {
                     return (
@@ -62,6 +63,7 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
                         </div>
                     );
                 }}
+                onHide={() => setHistory((prev) => prev.slice(0, 1))}
             >
                 {children}
             </Tippy>

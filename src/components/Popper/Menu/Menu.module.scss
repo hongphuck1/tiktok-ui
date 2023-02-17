@@ -1,7 +1,6 @@
 // menu wrapper
 .menu-list {
     width: 224px;
-
     .menu-popper {
         padding: 8px 0;
     }
@@ -13,7 +12,8 @@
 
 // MENU ITEM
 .menu-item {
-    width: 100%;
+    // width: 100%;
+    width: 223px;
     height: 42px;
     justify-content: flex-start;
     align-items: center;
@@ -22,6 +22,10 @@
     color: #111 !important;
     font-weight: 600;
     line-height: 1.8rem;
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
 
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);

@@ -73,6 +73,16 @@
     }
 }
 
+.outlineUpload {
+    color: var(--primary);
+    border-color: rgba(22, 24, 35, 0.12);
+    transition: all 0.25s;
+
+    &:hover {
+        background-color: rgba(43, 23, 27, 0.04);
+    }
+}
+
 .text {
     &:hover {
         text-decoration: underline;
