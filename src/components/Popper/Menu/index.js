@@ -39,11 +39,11 @@ const Menu = ({ children, items = [], onChange = defaultFn }) => {
     return (
         <div>
             <Tippy
+                // visible
                 interactive
-                visible
                 delay={[0, 1000]}
                 offset={[12, 8]}
-                placement="top-end"
+                placement="bottom-end"
                 render={(attrs) => {
                     return (
                         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>

@@ -4,6 +4,7 @@ import Content from '~/pages/Content';
 import Upload from '~/pages/Upload';
 import { HeaderOnly } from '~/components/Layout';
 import Search from '~/pages/Search';
+import { Profile } from '~/pages/Profile';
 
 // Công khai pages
 const publicRouters = [
@@ -18,6 +19,10 @@ const publicRouters = [
     {
         path: '/content',
         components: Content,
+    },
+    {
+        path: '/:nickname',
+        components: Profile,
     },
     {
         path: '/upload',
